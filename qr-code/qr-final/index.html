@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>qr-code</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="input-holder">
+          <label for="qrText">Enter you'r URL</label>
+          <input id="qrText" type="text" name="qr-text" />
+        </div>
+        <button type="submit">Generate</button>
+      </form>
+
+      <div class="card">
+        <div class="img-wraber">
+          <div id="qrcode" class="qr"></div>
+        </div>
+        <div class="qr-text">
+          <h1>Improve your front-end skills by building projects</h1>
+          <p>
+            Scan the QR code to visit Frontend Mentor and take your coding
+            skills to the next level
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="./node_modules/qrjs/qrcode.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
