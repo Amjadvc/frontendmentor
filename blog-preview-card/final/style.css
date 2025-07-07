@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Figtree";
+  src: url("assets/fonts/Figtree-VariableFont_wght.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("assets/fonts/Figtree-Italic-VariableFont_wght.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* Chrome,Safari,new edge */
+  -webkit-box-sizing: border-box;
+  /* Firefox */
+  -moz-box-sizing: border-box;
+}
+
+:root {
+  --yellow: #f4d04e;
+  --white: #ffffff;
+  --gray-950: #111111;
+  --gray-500: #6b6b6b;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* small */
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+/* medum */
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+body {
+  height: 100vh;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Figtree;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--white);
+  max-width: 384px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--gray-950);
+  box-shadow: 8px 8px 0 #000;
+}
+
+.img-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.img-holder img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.text-holder strong {
+  display: block;
+  width: fit-content;
+  padding: 7px 17px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background: var(--yellow);
+  color: var(--gray-950);
+  font-weight: 800;
+  font-size: 14px;
+  text-align: center;
+}
+.text-holder .date {
+  color: var(--gray-950);
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 14px;
+}
+.text-holder h1 {
+  color: var(--gray-950);
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-size: 24px;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.text-holder h1:hover {
+  color: var(--yellow);
+}
+
+.text-holder p:last-of-type {
+  color: var(--gray-500);
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.auother {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatar-img-holder {
+  display: flex;
+  max-width: 32px;
+}
+.avatar-img-holder img {
+  width: 100%;
+}
+
+.avatar-name-holder span {
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--gray-950);
+}
