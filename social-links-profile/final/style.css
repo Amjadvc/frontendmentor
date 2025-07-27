@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-SemiBold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Bold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Regular.ttf");
+  font-weight: 400;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+:root {
+  --green: hsl(75, 94%, 57%);
+  --White: hsl(0, 0%, 100%);
+  --Grey-700: hsl(0, 0%, 20%);
+  --Grey-800: hsl(0, 0%, 12%);
+  --Grey-900: hsl(0, 0%, 8%);
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+body {
+  background-color: var(--Grey-900);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter, sans-serif;
+}
+
+.card {
+  max-width: 372px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--Grey-800);
+  padding: 36px;
+}
+
+.card-headr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 85px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.img-holder img {
+  width: 100%;
+}
+
+.card-headr h2 {
+  padding-top: 30px;
+  font-weight: 700;
+  color: var(--White);
+  font-size: 25px;
+}
+.card-headr p:first-of-type {
+  padding-top: 11px;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 14px;
+}
+.card-headr p:last-of-type {
+  padding-top: 29px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--White);
+}
+.card-links {
+  padding-top: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+.card-links li {
+  width: 100%;
+
+  text-align: center;
+}
+.card-links li a {
+  padding: 13px;
+  border-radius: 6px;
+  color: var(--White);
+  background-color: var(--Grey-700);
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s;
+}
+.card-links li a:hover {
+  color: var(--Grey-700);
+  background-color: var(--green);
+}
