@@ -22,11 +22,9 @@ The designs were created to the following widths:
 - Red 700 (YouTube): hsl(348, 97%, 39%)
 
 #### Dark Theme
-
 - Linear gradient (Toggle): hsl(210, 79%, 56%) to hsl(146, 68%, 55%)
 
 #### Light Theme
-
 - Gray 400 (Toggle): hsl(230, 22%, 74%)
 
 ### Neutral
