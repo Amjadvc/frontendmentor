@@ -288,19 +288,6 @@ body {
   height: 100%;
 }
 
-/* .step {
-  height: 100%;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: 1s;
-}
-
-.step.active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: 1s;
-} */
-
 .step-header {
   display: flex;
   flex-direction: column;
