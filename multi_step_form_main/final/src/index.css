@@ -92,6 +92,12 @@ body {
   }
 }
 
+@media (max-height: 650px) {
+  .app {
+    height: unset;
+  }
+}
+
 .app .container {
   width: 100%;
   display: flex;
@@ -140,6 +146,11 @@ body {
     padding: 0;
     background-color: unset;
     box-shadow: unset;
+    justify-content: unset;
+    height: 100%;
+    background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
 
@@ -160,15 +171,14 @@ body {
 @media (max-width: 768px) {
   .steps-controler {
     width: 100%;
-    height: 180px;
+    height: 124px;
     flex-direction: row;
-    background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    background-image: unset;
     border-radius: 0px;
     padding: 20px 30px;
     justify-content: center;
     align-items: start;
     background-position: unset;
-    background-position-y: -14px;
     gap: 25px;
   }
 }
@@ -240,10 +250,13 @@ body {
 @media (max-width: 768px) {
   .steps-content {
     width: 100%;
-    padding: 0;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: -90px;
+    padding: 0 15px;
+    /* margin-top: -64px; */
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
@@ -251,20 +264,43 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: 0.2s;
+  transform: translateY(10px);
 }
+.form-holder.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
   .form-holder {
     background-color: var(--White);
     padding: 28px 22px;
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: 0px 6px 27px -13px #00000070;
-    /* margin-bottom: 25px; */
+    margin-bottom: 25px;
+    height: fit-content;
   }
 }
 
 .step {
   height: 100%;
 }
+
+/* .step {
+  height: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 1s;
+}
+
+.step.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1s;
+} */
+
 .step-header {
   display: flex;
   flex-direction: column;
@@ -323,10 +359,11 @@ body {
   padding: 17px;
   border: 1px solid var(--Grey-500);
   color: var(--Blue-950);
+  font-family: "ubuntu";
 
   border-radius: 7px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 400;
   transition: 0.2s;
 }
 .inp-holder input::placeholder {
@@ -346,7 +383,8 @@ body {
   top: 0;
   right: 0;
   color: var(--Red-500);
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 15px;
 }
 .inp-holder.error-show .inp-err {
   display: block;
@@ -362,6 +400,10 @@ body {
   font-weight: 500;
 }
 
+.step-controler.end {
+  justify-content: end;
+}
+
 .step-controler.mob {
   display: none;
   background: white;
@@ -375,7 +417,10 @@ body {
     display: none;
   }
   .step-controler.mob {
+    position: relative;
     display: flex;
+    left: 0;
+    bottom: 0;
   }
 }
 
@@ -400,14 +445,26 @@ body {
   color: var(--Blue-950);
 }
 
-.btn.next {
+.btn.next,
+.btn.confirm {
   color: var(--White);
-  background: var(--Blue-950);
-  padding: 12px 20px;
+  padding: 12px 24px;
   border-radius: 6px;
+  min-width: 117.11px;
+}
+
+.btn.next {
+  background: var(--Blue-950);
 }
 .btn.next:hover {
   background-color: #1b3e6a;
+}
+
+.btn.confirm {
+  background: var(--Purple-600);
+}
+.btn.confirm:hover {
+  opacity: 0.75;
 }
 
 /* ======================step2====================== */
@@ -435,21 +492,24 @@ body {
   border-radius: 8px;
   transition: 0.2s;
 }
-.plan-card:hover {
-  border: 1px solid var(--Purple-600);
-  background-color: var(--Blue-100);
-}
 @media (max-width: 768px) {
   .plan-card {
     width: 100%;
   }
+}
+.plan-card:hover {
+  border: 1px solid var(--Purple-600);
+}
+.plan-card.active {
+  border: 1px solid var(--Purple-600);
+  background-color: var(--Blue-100);
 }
 
 .plan-card-inner {
   cursor: pointer;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   gap: 45px;
@@ -473,14 +533,14 @@ body {
   font-size: 17px;
 }
 .plan-content .plan-pay {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--Grey-500);
-  font-size: 15px;
+  font-size: 14px;
 }
 .plan-content .months-free {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--Blue-950);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .plan-controler {
@@ -667,8 +727,8 @@ input:checked + .slider:before {
 .check-plan-info button {
   color: var(--Grey-500);
   text-decoration: underline;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
   transition: 0.2s;
 }
 .check-plan-info button:hover {
@@ -704,26 +764,19 @@ input:checked + .slider:before {
 
 .totle-holder {
   position: relative;
-  width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 25px;
+  padding: 25px;
 }
 .totle-holder p {
   color: var(--Grey-500);
+  font-size: 15px;
 }
 .totle-holder strong {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--Purple-600);
-}
-@media (max-width: 768px) {
-  .totle-holder strong {
-    font-size: 18px;
-  }
 }
 
 /* ======================step5====================== */
@@ -765,7 +818,6 @@ input:checked + .slider:before {
 @media (max-width: 768px) {
   .thank-title {
     font-size: 30px;
-    /* padding-top: 0px; */
   }
 }
 
@@ -774,7 +826,6 @@ input:checked + .slider:before {
   line-height: 1.6;
 }
 
-/* //// */
 .hidden {
   display: none;
 }
